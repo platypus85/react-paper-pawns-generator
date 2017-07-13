@@ -1,3 +1,10 @@
+$one-square: 1in;
+$two-square: 2in;
+$two-half-square: 2.5in;
+$three-square: 3in;
+$four-square: 4in;
+$fold-border: 1pt solid #e4e4e4;
+$cut-border: 1pt solid #c1c1c1;
 html,
 body {
     width: 210mm;
@@ -5,18 +12,13 @@ body {
 }
 
 .pawn-container {
-    width: 1in;
-    border: 1px solid #c1c1c1;
+    border: $cut-border !important;
     display: inline-block;
     margin: 0 2mm;
     .base {
-        width: 1in;
-        height: 1in;
         position: relative;
     }
     .pawn {
-        width: 1in;
-        height: 1.85in;
         position: relative;
         overflow: hidden;
         img {
@@ -32,9 +34,8 @@ body {
         }
     }
     .back {
-        border-bottom: 1px dashed #dadada;
         .pawn {
-            border-top: 1px dashed #dadada;
+            border-bottom: $fold-border !important;
             img {
                 -ms-transform: translate(-50%, -50%) rotate(180deg) scaleX(-1);
                 -webkit-transform: translate(-50%, -50%) rotate(180deg) scaleX(-1);
@@ -42,6 +43,7 @@ body {
             }
         }
         .base {
+            border-bottom: $fold-border !important;
             &:after {
                 content: "";
                 position: absolute;
@@ -50,19 +52,19 @@ body {
                 bottom: 0;
                 width: 50%;
                 right: 0;
-                border-top: 1px solid #c1c1c1;
+                border-top: $cut-border !important;
             }
         }
     }
     .front {
         .pawn {
-            border-bottom: 1px dashed #dadada;
             img {
                 bottom: 5px;
                 position: absolute;
             }
         }
         .base {
+            border-top: $fold-border !important;
             &:after {
                 content: "";
                 position: absolute;
@@ -71,16 +73,102 @@ body {
                 bottom: 0;
                 width: 50%;
                 left: 0;
-                border-top: 1px solid #c1c1c1;
+                border-top: $cut-border !important;
             }
+        }
+    }
+    &.tiny {
+        .pawn {
+            width: $one-square;
+            height: $one-square;
+        }
+        .base {
+            width: $one-square;
+            height: $one-square;
+        }
+    }
+    &.small {
+        .pawn {
+            width: $one-square;
+            height: $two-square;
+        }
+        .base {
+            width: $one-square;
+            height: $one-square;
+        }
+    }
+    &.medium {
+        .pawn {
+            width: $one-square;
+            height: $two-square;
+        }
+        .base {
+            width: $one-square;
+            height: $one-square;
+        }
+    }
+    &.large {
+        .pawn {
+            width: $two-square;
+            height: $two-square;
+        }
+        .base {
+            width: $two-square;
+            height: $two-square;
+        }
+    }
+    &.huge {
+        .pawn {
+            width: $three-square;
+            height: $two-half-square;
+        }
+        .base {
+            width: $three-square;
+            height: $three-square;
+        }
+    }
+    &.gargantuan {
+        .front {
+            overflow: hidden;
+            float: left;
+             .base {
+                &:after {
+                    top: 1in;
+                    height: 2in;
+                    border-bottom: $cut-border !important;
+                }
+            }
+        }
+        .back {
+            overflow: hidden;
+            float: left;
+            border-right: 1pt solid #c1c1c1 !important;
+            .base {
+                &:after {
+                    top: 1in;
+                    height: 2in;
+                    border-bottom: $cut-border !important;
+                }
+            }
+            .pawn {
+                border-bottom: none !important;
+            }
+        }
+        .pawn {
+            width: $four-square;
+            height: $four-square;
+        }
+        .base {
+            width: $four-square;
+            height: $four-square;
         }
     }
 }
 
 page[size="A4"] {
     background: white;
-    width: 21cm;
-    height: 29.7cm;
+    width: 210mm;
+    height: 297mm;
     display: block;
 }
 
@@ -91,6 +179,8 @@ page[size="A4"] {
 @media print {
     body {
         margin: 0.25in 0 0;
+        width: 210mm;
+        height: auto;
         page-break-after: auto;
     }
     pre {
