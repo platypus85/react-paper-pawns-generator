@@ -11,6 +11,12 @@ body {
     height: 297mm;
 }
 
+#pawn-table {
+    td.pawn-image img {
+        max-width: 100px;
+    }
+}
+
 .pawn-container {
     border: $cut-border !important;
     display: inline-block;
@@ -131,7 +137,7 @@ body {
         .front {
             overflow: hidden;
             float: left;
-             .base {
+            .base {
                 &:after {
                     top: 1in;
                     height: 2in;

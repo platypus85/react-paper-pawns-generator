@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import './styles.css';
 import PawnsList from './PawnsList';
+import PawnsTable from './PawnsTable';
 
 class App extends Component {
 
@@ -35,12 +36,37 @@ class App extends Component {
     ]
   }
 
-  render() {
+  removePawn = (pawn) => {
+    this.setState((state) => ({
+      pawns: state
+        .pawns
+        .filter((p) => p !== pawn)
+    }))
+  }
 
-    const {pawns,image} = this.state;
+  updatePawnQuantity = (pawn, q) => {
+
+    this
+      .state
+      .pawns
+      .forEach((p, index) => {
+        if (p === pawn) {
+          p.qty = q;
+        }
+      });
+
+    this.setState({pawns: this.state.pawns})
+  }
+
+  render() {
+    const {pawns} = this.state;
 
     return (
       <div className="App">
+        <PawnsTable
+          onRemovePawn={this.removePawn}
+          onUpdatePawnQuantity={this.updatePawnQuantity}
+          pawns={pawns}/>
         <PawnsList pawns={pawns}/>
       </div>
     );
