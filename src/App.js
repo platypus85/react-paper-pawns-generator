@@ -37,7 +37,7 @@ class App extends Component {
 
   render() {
 
-    const {pawns} = this.state;
+    const {pawns,image} = this.state;
 
     return (
       <div className="App">
