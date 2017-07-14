@@ -3,6 +3,7 @@ import './App.css';
 import './styles.css';
 import PawnsList from './PawnsList';
 import PawnsTable from './PawnsTable';
+import CreatePawns from './CreatePawns';
 
 class App extends Component {
 
@@ -63,6 +64,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <CreatePawns/>
         <PawnsTable
           onRemovePawn={this.removePawn}
           onUpdatePawnQuantity={this.updatePawnQuantity}

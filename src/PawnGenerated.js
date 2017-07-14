@@ -12,7 +12,7 @@ class PawnGenerated extends React.Component {
             console.log(pawnsGenerated);
 
         return (
-            <div>{pawnsGenerated}</div>
+            <div id="pawns-to-print">{pawnsGenerated}</div>
         )
     }
 }

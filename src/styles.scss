@@ -17,156 +17,159 @@ body {
     }
 }
 
-.pawn-container {
-    border: $cut-border !important;
-    display: inline-block;
-    margin: 0 2mm;
-    .base {
-        position: relative;
-    }
-    .pawn {
-        position: relative;
-        overflow: hidden;
-        img {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            height: 85%;
-            width: auto;
-            z-index: -999;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-    }
-    .back {
-        .pawn {
-            border-bottom: $fold-border !important;
-            img {
-                -ms-transform: translate(-50%, -50%) rotate(180deg) scaleX(-1);
-                -webkit-transform: translate(-50%, -50%) rotate(180deg) scaleX(-1);
-                transform: translate(-50%, -50%) rotate(180deg) scaleX(-1);
-            }
-        }
+#pawns-to-print {
+    display: none;
+    .pawn-container {
+        border: $cut-border !important;
+        display: inline-block;
+        margin: 0 2mm;
         .base {
-            border-bottom: $fold-border !important;
-            &:after {
-                content: "";
-                position: absolute;
-                z-index: -1;
-                top: 50%;
-                bottom: 0;
-                width: 50%;
-                right: 0;
-                border-top: $cut-border !important;
-            }
+            position: relative;
         }
-    }
-    .front {
         .pawn {
-            img {
-                bottom: 5px;
-                position: absolute;
-            }
-        }
-        .base {
-            border-top: $fold-border !important;
-            &:after {
-                content: "";
-                position: absolute;
-                z-index: -1;
-                top: 50%;
-                bottom: 0;
-                width: 50%;
-                left: 0;
-                border-top: $cut-border !important;
-            }
-        }
-    }
-    &.tiny {
-        .pawn {
-            width: $one-square;
-            height: $one-square;
-        }
-        .base {
-            width: $one-square;
-            height: $one-square;
-        }
-    }
-    &.small {
-        .pawn {
-            width: $one-square;
-            height: $two-square;
-        }
-        .base {
-            width: $one-square;
-            height: $one-square;
-        }
-    }
-    &.medium {
-        .pawn {
-            width: $one-square;
-            height: $two-square;
-        }
-        .base {
-            width: $one-square;
-            height: $one-square;
-        }
-    }
-    &.large {
-        .pawn {
-            width: $two-square;
-            height: $two-square;
-        }
-        .base {
-            width: $two-square;
-            height: $two-square;
-        }
-    }
-    &.huge {
-        .pawn {
-            width: $three-square;
-            height: $two-half-square;
-        }
-        .base {
-            width: $three-square;
-            height: $three-square;
-        }
-    }
-    &.gargantuan {
-        .front {
+            position: relative;
             overflow: hidden;
-            float: left;
-            .base {
-                &:after {
-                    top: 1in;
-                    height: 2in;
-                    border-bottom: $cut-border !important;
-                }
+            img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                height: 85%;
+                width: auto;
+                z-index: -999;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
             }
         }
         .back {
-            overflow: hidden;
-            float: left;
-            border-right: 1pt solid #c1c1c1 !important;
+            .pawn {
+                border-bottom: $fold-border !important;
+                img {
+                    -ms-transform: translate(-50%, -50%) rotate(180deg) scaleX(-1);
+                    -webkit-transform: translate(-50%, -50%) rotate(180deg) scaleX(-1);
+                    transform: translate(-50%, -50%) rotate(180deg) scaleX(-1);
+                }
+            }
             .base {
+                border-bottom: $fold-border !important;
                 &:after {
-                    top: 1in;
-                    height: 2in;
-                    border-bottom: $cut-border !important;
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 50%;
+                    bottom: 0;
+                    width: 50%;
+                    right: 0;
+                    border-top: $cut-border !important;
+                }
+            }
+        }
+        .front {
+            .pawn {
+                img {
+                    bottom: 5px;
+                    position: absolute;
+                }
+            }
+            .base {
+                border-top: $fold-border !important;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 50%;
+                    bottom: 0;
+                    width: 50%;
+                    left: 0;
+                    border-top: $cut-border !important;
+                }
+            }
+        }
+        &.tiny {
+            .pawn {
+                width: $one-square;
+                height: $one-square;
+            }
+            .base {
+                width: $one-square;
+                height: $one-square;
+            }
+        }
+        &.small {
+            .pawn {
+                width: $one-square;
+                height: $two-square;
+            }
+            .base {
+                width: $one-square;
+                height: $one-square;
+            }
+        }
+        &.medium {
+            .pawn {
+                width: $one-square;
+                height: $two-square;
+            }
+            .base {
+                width: $one-square;
+                height: $one-square;
+            }
+        }
+        &.large {
+            .pawn {
+                width: $two-square;
+                height: $two-square;
+            }
+            .base {
+                width: $two-square;
+                height: $two-square;
+            }
+        }
+        &.huge {
+            .pawn {
+                width: $three-square;
+                height: $two-half-square;
+            }
+            .base {
+                width: $three-square;
+                height: $three-square;
+            }
+        }
+        &.gargantuan {
+            .front {
+                overflow: hidden;
+                float: left;
+                .base {
+                    &:after {
+                        top: 1in;
+                        height: 2in;
+                        border-bottom: $cut-border !important;
+                    }
+                }
+            }
+            .back {
+                overflow: hidden;
+                float: left;
+                border-right: 1pt solid #c1c1c1 !important;
+                .base {
+                    &:after {
+                        top: 1in;
+                        height: 2in;
+                        border-bottom: $cut-border !important;
+                    }
+                }
+                .pawn {
+                    border-bottom: none !important;
                 }
             }
             .pawn {
-                border-bottom: none !important;
+                width: $four-square;
+                height: $four-square;
             }
-        }
-        .pawn {
-            width: $four-square;
-            height: $four-square;
-        }
-        .base {
-            width: $four-square;
-            height: $four-square;
+            .base {
+                width: $four-square;
+                height: $four-square;
+            }
         }
     }
 }
@@ -192,13 +195,19 @@ page[size="A4"] {
     pre {
         white-space: pre-wrap;
     }
+    #pawn-table {
+        display: none;
+    }
     #action-container {
         display: none;
     }
-    .pawn-container {
-        .pawn {
-            img {
-                z-index: -999;
+    #pawns-to-print {
+        display: block;
+        .pawn-container {
+            .pawn {
+                img {
+                    z-index: -999;
+                }
             }
         }
     }
