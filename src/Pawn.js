@@ -3,9 +3,8 @@ import React from 'react';
 class Pawn extends React.Component {
     render() {
         const {pawn} = this.props;
-
         return (
-            <div key={pawn.image} className={'pawn-container ' + pawn.size}>
+             <div key={pawn.image} className={'pawn-container ' + pawn.size}>
                 <div className="back">
                     <div className="base">
                     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Pawn from './Pawn';
+import PawnGenerated from './PawnGenerated';
 
 class PawnsList extends React.Component{
 
@@ -9,8 +9,8 @@ class PawnsList extends React.Component{
 
         return(
             <div>
-                {pawns.map((pawn) => (
-                    <Pawn key={pawn.image} pawn={pawn}/>
+                {pawns.map((pawn, index) => (
+                    <PawnGenerated key={index} pawn={pawn}/>
                 ))}
             </div>
         )

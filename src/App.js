@@ -29,7 +29,7 @@ class App extends Component {
       }, {
         image: 'http://2.bp.blogspot.com/-5NojR4Nlbdo/Vn7ffGbEDPI/AAAAAAAAJPw/zgEH64e7dSI/s1600/' +
             'Monster_Manual_5e_-_Ogre_-_p237.jpg',
-        size: 'huge',
+        size: 'gargantuan',
         qty: 2
       }
     ]
