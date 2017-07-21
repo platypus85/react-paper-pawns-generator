@@ -1,13 +1,22 @@
 import React from 'react';
+import ReactFileReader from 'react-file-reader';
 
-class CreatePawns extends React.Component{
+class CreatePawns extends React.Component {
+    handleFiles = (files) => {
+    }
 
-    render(){
+    render() {
+        const {onUploadFiles} = this.props;
 
-        return(
+        return (
             <div>
-                 <form>
-                   
+                <form>
+                    <ReactFileReader
+                        base64={true}
+                        multipleFiles={true}
+                        handleFiles={onUploadFiles}>
+                        <button className='btn'>Upload</button>
+                    </ReactFileReader>
                 </form>
             </div>
         )

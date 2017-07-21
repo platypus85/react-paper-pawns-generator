@@ -59,12 +59,29 @@ class App extends Component {
     this.setState({pawns: this.state.pawns})
   }
 
+  uploadFiles = (files) => {
+    console.log(files);
+    if (files.length) {
+      files
+        .base64
+        .forEach((base64, index) => {
+          if (base64) {
+            this
+              .state
+              .pawns
+              .push({image: base64, size: 'medium', qty: 1});
+          }
+        });
+      this.setState({pawns: this.state.pawns});
+    }
+  }
+
   render() {
     const {pawns} = this.state;
 
     return (
       <div className="App">
-        <CreatePawns/>
+        <CreatePawns onUploadFiles={this.uploadFiles}/>
         <PawnsTable
           onRemovePawn={this.removePawn}
           onUpdatePawnQuantity={this.updatePawnQuantity}
