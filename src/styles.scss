@@ -196,11 +196,6 @@ page[size="A4"] {
     pre {
         white-space: pre-wrap;
     }
-    div{
-        page-break-before: auto;
-        page-break-after: auto; 
-        page-break-inside: avoid;
-    }
     #uploader {
         display: none;
     }
@@ -211,13 +206,10 @@ page[size="A4"] {
         display: none;
     }
     .pawn-container {
-        page-break-inside: avoid;
-        position: relative;
+        display:flex
     }
     #pawns-to-print {
         display: inline;
-        page-break-inside: avoid;
-        position: relative;
         .pawn-container {
             .pawn {
                 img {
