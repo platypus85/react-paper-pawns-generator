@@ -1,7 +1,8 @@
 $one-square: 1in;
-$two-square: 2in;
+$two-square: 1.9in;
 $two-half-square: 2.5in;
 $three-square: 3in;
+$gargantuan-height: 3.5in;
 $four-square: 4in;
 $fold-border: 1pt solid #e4e4e4;
 $cut-border: 1pt solid #c1c1c1;
@@ -141,8 +142,8 @@ body {
                 float: left;
                 .base {
                     &:after {
-                        top: 1in;
-                        height: 2in;
+                        top: $gargantuan-height/3;
+                        height: $gargantuan-height/3;
                         border-bottom: $cut-border !important;
                     }
                 }
@@ -153,8 +154,8 @@ body {
                 border-right: 1pt solid #c1c1c1 !important;
                 .base {
                     &:after {
-                        top: 1in;
-                        height: 2in;
+                        top: $gargantuan-height/3;
+                        height: $gargantuan-height/3;
                         border-bottom: $cut-border !important;
                     }
                 }
@@ -164,11 +165,11 @@ body {
             }
             .pawn {
                 width: $four-square;
-                height: $four-square;
+                height: $gargantuan-height;
             }
             .base {
                 width: $four-square;
-                height: $four-square;
+                height: $gargantuan-height;
             }
         }
     }
@@ -187,7 +188,7 @@ page[size="A4"] {
 
 @media print {
     body {
-        margin: 0.25in 0 0;
+        margin: 0;
         width: 210mm;
         height: auto;
         page-break-after: auto;
@@ -195,14 +196,28 @@ page[size="A4"] {
     pre {
         white-space: pre-wrap;
     }
+    div{
+        page-break-before: auto;
+        page-break-after: auto; 
+        page-break-inside: avoid;
+    }
+    #uploader {
+        display: none;
+    }
     #pawn-table {
         display: none;
     }
     #action-container {
         display: none;
     }
+    .pawn-container {
+        page-break-inside: avoid;
+        position: relative;
+    }
     #pawns-to-print {
-        display: block;
+        display: inline;
+        page-break-inside: avoid;
+        position: relative;
         .pawn-container {
             .pawn {
                 img {

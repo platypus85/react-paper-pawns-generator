@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-file-reader": "^1.1.1",
+    "react-file-base64": "git+https://github.com/lrojas94/react-file-base64.git",
     "react-scripts": "1.0.10"
   },
   "scripts": {
